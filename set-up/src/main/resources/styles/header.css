@@ -1,0 +1,48 @@
+#header {
+    -fx-background-color: #889499;
+    -fx-padding: 15, 12, 15, 12;
+    -fx-pref-width: 600;
+    -fx-pref-height: 75;
+}
+
+.label {
+    -fx-font-size: 32px;
+    -fx-font-family: "Arial Black";
+    -fx-fill: #818181;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+#lock {
+    -fx-pref-width: 100;
+    -fx-pref-height: 20;
+    -fx-hgap: 10;
+}
+
+#grid {
+    -fx-padding: 15, 12, 15, 12;
+    -fx-pref-width: 600;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+    -fx-spacing: 10;
+}
+
+#add-quiz-button {
+    -fx-pref-width: 120;
+    -fx-pref-height: 15;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+#create-quiz-button {
+    -fx-pref-width: 120;
+    -fx-pref-height: 15;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+
+#create-quiz {
+    -fx-pref-height: 15;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}

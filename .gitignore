@@ -1,0 +1,10 @@
+*.iml
+*.ipr
+*.iws
+.gradle
+.DS_Store
+out/
+screenshot*
+*.txt
+!player/build/docs/*
+build/

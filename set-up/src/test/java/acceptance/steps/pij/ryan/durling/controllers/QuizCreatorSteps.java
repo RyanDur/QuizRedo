@@ -28,7 +28,8 @@ public class QuizCreatorSteps {
         ServerLink serverLink = mock(ServerLink.class);
         quizMaker = mock(QuizMaker.class);
         when(serverLink.getQuizMaker()).thenReturn(quizMaker);
-        quizCreator = new QuizCreatorImpl(serverLink);
+        quizCreator = new QuizCreatorImpl();
+        quizCreator.setServerLink(serverLink);
     }
 
     @When("^a user creates a quiz named \"([^\"]*)\"$")

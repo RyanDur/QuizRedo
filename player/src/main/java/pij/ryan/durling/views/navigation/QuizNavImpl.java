@@ -15,7 +15,11 @@ import pij.ryan.durling.views.elements.Footer;
 import pij.ryan.durling.views.elements.Header;
 import pij.ryan.durling.views.elements.ViewPane;
 import pij.ryan.durling.views.factories.Views;
-import pij.ryan.durling.views.pages.*;
+import pij.ryan.durling.views.pages.Answer;
+import pij.ryan.durling.views.pages.Menu;
+import pij.ryan.durling.views.pages.Question;
+import pij.ryan.durling.views.pages.Results;
+import pij.ryan.durling.views.pages.SignIn;
 
 import java.util.Set;
 
@@ -33,7 +37,7 @@ public class QuizNavImpl extends StackPane implements QuizNav {
         this.views = views;
         this.setId(ViewMessages.QUIZ_PLAYER_ID);
         this.getStylesheets().add(ViewMessages.QUIZ_PLAYER_VIEW_STYLE_SHEET);
-
+//        System.out.println(ResourceBundle.getBundle("."));
 
         borderPane = new BorderPane();
         header = views.getHeader();

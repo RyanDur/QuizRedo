@@ -1,13 +1,10 @@
 package gui.pij.ryan.durling.views.pages;
 
-import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
-import org.junit.Test;
 import org.loadui.testfx.GuiTest;
 import pij.ryan.durling.views.pages.Menu;
 import pij.ryan.durling.views.pages.MenuImpl;
@@ -33,23 +30,23 @@ public class SplitMenuTest extends GuiTest {
         return stackPane;
     }
 
-    @Test
-    public void should() {
-        Button button1 = new Button("Hello");
-        Button button2 = new Button("Hello");
-        Button button3 = new Button("Hello");
-        Button button4 = new Button("Hello");
-        Button button5 = new Button("Hello");
-        Button button6 = new Button("Hello");
-        Platform.setImplicitExit(false);
-        Platform.runLater(() -> {
-            splitMenu.addOptionLeft(button1, 0);
-            splitMenu.addOptionLeft(button2, 1);
-            splitMenu.addOptionLeft(button3, 2);
-
-            splitMenu.addOptionRight(button4, 0);
-            splitMenu.addOptionRight(button5, 1);
-            splitMenu.addOptionRight(button6, 2);
-        });
-    }
+//    @Test
+//    public void should() {
+//        Button button1 = new Button("Hello");
+//        Button button2 = new Button("Hello");
+//        Button button3 = new Button("Hello");
+//        Button button4 = new Button("Hello");
+//        Button button5 = new Button("Hello");
+//        Button button6 = new Button("Hello");
+//        Platform.setImplicitExit(false);
+//        Platform.runLater(() -> {
+//            splitMenu.addOptionLeft(button1, 0);
+//            splitMenu.addOptionLeft(button2, 1);
+//            splitMenu.addOptionLeft(button3, 2);
+//
+//            splitMenu.addOptionRight(button4, 0);
+//            splitMenu.addOptionRight(button5, 1);
+//            splitMenu.addOptionRight(button6, 2);
+//        });
+//    }
 }

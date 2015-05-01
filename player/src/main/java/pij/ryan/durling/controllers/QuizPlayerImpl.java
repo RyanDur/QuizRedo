@@ -1,8 +1,5 @@
 package pij.ryan.durling.controllers;
 
-import com.google.inject.Inject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import pij.ryan.durling.messages.ControllerMessages;
 import pij.ryan.durling.models.Question;
 import pij.ryan.durling.models.Quiz;
@@ -10,12 +7,10 @@ import pij.ryan.durling.models.QuizOption;
 import pij.ryan.durling.models.Score;
 import pij.ryan.durling.resources.QuizMaster;
 import pij.ryan.durling.resources.ServerLink;
-import pij.ryan.durling.resources.ServerLinkImpl;
 
 import java.util.Set;
 
 public class QuizPlayerImpl implements QuizPlayer {
-    private static final Logger log = LoggerFactory.getLogger(ServerLinkImpl.class);
     private QuizMaster quizMaster;
     private Quiz quiz;
     private String playerName;
@@ -24,7 +19,6 @@ public class QuizPlayerImpl implements QuizPlayer {
     private int oldHighScore;
 
 
-    @Inject
     public QuizPlayerImpl(ServerLink serverLink) {
         this.quizMaster = serverLink.getQuizMaster();
     }

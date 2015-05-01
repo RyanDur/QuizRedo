@@ -3,6 +3,7 @@ package pij.ryan.durling.controllers;
 import pij.ryan.durling.exceptions.IllegalQuizCreationException;
 import pij.ryan.durling.exceptions.InvalidQuizException;
 import pij.ryan.durling.models.QuizOption;
+import pij.ryan.durling.resources.ServerLink;
 
 import java.util.Set;
 
@@ -15,6 +16,8 @@ public interface QuizCreator {
      * @throws IllegalArgumentException if name is null
      */
     void createQuiz(String name) throws IllegalArgumentException;
+
+    void setServerLink(ServerLink serverLink);
 
     /**
      * Name of quiz

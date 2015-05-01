@@ -1,6 +1,5 @@
 package pij.ryan.durling.resources;
 
-import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pij.ryan.durling.messages.ServerMessages;
@@ -10,7 +9,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-@Singleton
+
 public class ServerLinkImpl implements ServerLink {
 
     private static final Logger log = LoggerFactory.getLogger(ServerLinkImpl.class);
@@ -27,11 +26,13 @@ public class ServerLinkImpl implements ServerLink {
     @Override
     public QuizMaker getQuizMaker()  {
         QuizMaker quizMaker = null;
+
         try {
             quizMaker = (QuizMaker) registry.lookup(ServerMessages.MAKER);
         } catch (RemoteException | NotBoundException e) {
-            log.error(ServerMessages.ERROR_MESSAGE);
+            e.printStackTrace();
         }
+
         return quizMaker;
     }
 }

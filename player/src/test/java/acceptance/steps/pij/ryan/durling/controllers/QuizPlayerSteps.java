@@ -4,6 +4,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.mockito.Mockito;
 import pij.ryan.durling.controllers.QuizPlayer;
 import pij.ryan.durling.controllers.QuizPlayerImpl;
 import pij.ryan.durling.models.Question;
@@ -19,7 +20,10 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.mockito.Matchers.anyInt;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class QuizPlayerSteps {
 
@@ -32,7 +36,7 @@ public class QuizPlayerSteps {
     @Given("^there is a quiz player$")
     public void there_is_a_quiz_player() throws Throwable {
         ServerLink serverLink = mock(ServerLink.class);
-        quizMaster = mock(QuizMaster.class);
+        quizMaster = Mockito.mock(QuizMaster.class);
         when(serverLink.getQuizMaster()).thenReturn(quizMaster);
         quizPlayer = new QuizPlayerImpl(serverLink);
     }

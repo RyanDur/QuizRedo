@@ -1,6 +1,5 @@
 package pij.ryan.durling.views.navigation;
 
-import com.google.inject.Inject;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -13,7 +12,9 @@ import pij.ryan.durling.views.elements.Footer;
 import pij.ryan.durling.views.elements.Header;
 import pij.ryan.durling.views.elements.ViewBox;
 import pij.ryan.durling.views.factories.Views;
-import pij.ryan.durling.views.pages.*;
+import pij.ryan.durling.views.pages.Answers;
+import pij.ryan.durling.views.pages.Questions;
+import pij.ryan.durling.views.pages.SplitMenu;
 
 
 public class EditorImpl extends BorderPane implements Editor {
@@ -26,12 +27,23 @@ public class EditorImpl extends BorderPane implements Editor {
     private Header header;
     private ViewBox viewBox;
 
-    @Inject
-    public EditorImpl(QuizCreator quizCreator, Views views) {
-        this.getStylesheets().add(ViewMessages.EDITOR_VIEW_STYLE_SHEET);
-        this.setId(ViewMessages.EDITOR_VIEW_ID);
-        this.views = views;
+    public EditorImpl() {
+
+    }
+
+    public void setQuizCreator(QuizCreator quizCreator) {
         this.quizCreator = quizCreator;
+    }
+
+    public void setViews(Views views) {
+        try {
+            this.setId(ViewMessages.EDITOR_VIEW_ID);
+            String style = ViewMessages.EDITOR_VIEW_STYLE_SHEET;
+            this.getStylesheets().add(style);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        this.views = views;
         addHeader();
         addCenter();
         addFooter();

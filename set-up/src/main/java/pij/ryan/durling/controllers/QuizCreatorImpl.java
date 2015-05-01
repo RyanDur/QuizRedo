@@ -1,6 +1,5 @@
 package pij.ryan.durling.controllers;
 
-import com.google.inject.Inject;
 import pij.ryan.durling.exceptions.IllegalQuizCreationException;
 import pij.ryan.durling.exceptions.InvalidQuizException;
 import pij.ryan.durling.messages.ControllerMessages;
@@ -16,8 +15,8 @@ public class QuizCreatorImpl implements QuizCreator {
     private String name;
     private String question;
 
-    @Inject
-    public QuizCreatorImpl(ServerLink serverLink) {
+    @Override
+    public void setServerLink(ServerLink serverLink) {
         quizMaker = serverLink.getQuizMaker();
     }
 

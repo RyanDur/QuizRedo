@@ -1,16 +1,14 @@
 package pij.ryan.durling;
 
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.apache.log4j.BasicConfigurator;
-import pij.ryan.durling.modules.EditorModule;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pij.ryan.durling.views.navigation.Editor;
-import pij.ryan.durling.views.navigation.EditorImpl;
 
 public class Start extends Application {
 
@@ -21,8 +19,11 @@ public class Start extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         BasicConfigurator.configure();
-        Injector injector = Guice.createInjector(new EditorModule());
-        Editor editor = injector.getInstance(EditorImpl.class);
+        ApplicationContext context = new ClassPathXmlApplicationContext(
+                "classpath:META-INF/spring/applicationContext.xml");
+
+        Editor editor = context.getBean("editor", Editor.class);
+
         stage.setScene(new Scene((Parent) editor, 625, 500));
         stage.show();
     }

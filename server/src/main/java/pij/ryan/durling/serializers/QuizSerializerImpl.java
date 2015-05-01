@@ -13,7 +13,7 @@ public class QuizSerializerImpl extends Serializer implements QuizSerializer {
     private static String fileName = SerializerMessages.QUIZ_FILE;
     private ConcurrentSkipListMap<Integer, Quiz> available;
     private ConcurrentSkipListMap<Integer, Quiz> closed;
-
+    
     @Override
     public void persist(ConcurrentSkipListMap<Integer, Quiz> open, ConcurrentSkipListMap<Integer, Quiz> closed) {
         this.available = open;
